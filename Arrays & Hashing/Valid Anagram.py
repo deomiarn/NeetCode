@@ -23,17 +23,10 @@ class Solution:
         s_sort = sorted(s)
         t_sort = sorted(t)
 
-        print(s_sort)
-        print(t_sort)
-
-        for i in range(len(s_sort)):
-            if s_sort[i] != t_sort[i]:
-                return False
-
-        return True
+        return s_sort == t_sort
 
 
 if __name__ == "__main__":
     solution = Solution()
-    print(solution.isAnagram("racecar", "carrace")) # True
-    print(solution.isAnagram("jar", "jam")) # False
+    print(solution.isAnagram("racecar", "carrace"))  # True
+    print(solution.isAnagram("jar", "jam"))  # False
