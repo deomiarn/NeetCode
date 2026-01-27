@@ -20,10 +20,16 @@
 
 class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
-        s_sort = sorted(s)
-        t_sort = sorted(t)
+        if len(s) != len(t):
+            return False
 
-        return s_sort == t_sort
+        s_hash, t_hash = {}, {}
+
+        for i in range(len(s)):
+            s_hash[s[i]] = s_hash.get(s[i], 0) + 1
+            t_hash[t[i]] = t_hash.get(t[i], 0) + 1
+
+        return s_hash == t_hash
 
 
 if __name__ == "__main__":
